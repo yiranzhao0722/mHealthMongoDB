@@ -1,0 +1,551 @@
+1508105977924:install.packages("RStudioAMI_0.2.1.tar.gz", repo=NULL, type="source")
+1513711179136:install.packages("mongolite")
+1513711479513:?packageStatus
+1513711497848:packageStatus()
+1513733002996:library("mongolite")
+1513733013903:m <- mongo("mtcars", url = "mongodb://readwrite:test@ds043942.mongolab.com:43942/jeroen_test")
+1513733025214:View(m)
+1513733025460:View(m)
+1513733070306:flt <- mongo("flights")
+1513733120164:heart <- mongo(collection = "test", db = "test", url = "mongodb://localhost",
+1513733120166:verbose = FALSE, options = ssl_options())
+1513733192774:h <- mongo("heart", url = "https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0")
+1513733499452:library("jsonlite")
+1513733559802:heart <- fromJSON("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0")
+1513733572275:heart <- fromJSON("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json")
+1513733825931:heart <- fromJSON("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0", collapse="")
+1513788201950:dmd <- mongo("diamonds")
+1513788213100:library("mongolite")
+1513788216824:dmd <- mongo("diamonds")
+1513788549885:install.packages(c("httr", "jsonlite"))
+1513788559155:install.packages(c("httr", "jsonlite"))
+1513788620236:hadley_orgs <- fromJSON("https://api.github.com/users/hadley/orgs")
+1513788636443:library("jsonlite")
+1513788638958:hadley_orgs <- fromJSON("https://api.github.com/users/hadley/orgs")
+1513788671033:heart_rate <- fromJSON("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0")
+1513788704881:heart_rate <- fromJSON("https://www.dropbox.com/s/kpmkqyx85dugfho/step-count.json?dl=0")
+1513788926282:library(devtools)
+1513788936280:install_github(repo = "mongosoup/rmongodb")
+1513788957755:library(rmongodb)
+1513788972421:mongo = mongo.create(host = "localhost")
+1513789224476:mongo = mongo.create(host = "localhost")
+1513789234006:mongo.is.connected(mongo)
+1513789309531:mongo$import(url("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"))
+1513790194134:mongo$import(gzcon(curl::curl("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0
+1513790194135:")))
+1513790262263:flt <- mongo("flights")
+1513790279108:library("mongolite")
+1513790281970:flt <- mongo("flights")
+1513790294641:flt$import(gzcon(curl::curl("https://jeroen.github.io/data/nycflights13.json.gz")))
+1513790600220:heart <- mongo("heart-rate")
+1513790632216:heart$import(gzcon(curl::curl("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0")))
+1513790683742:heart$import(gzcon(curl::curl("https://www.dropbox.com/s/kpmkqyx85dugfho/step-count.json?dl=0")))
+1513791417585:library("rjson")
+1513791429802:install.packages("rjson")
+1513791447437:library("rjson")
+1513791508686:json_file <- "https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"
+1513791523619:json_data <- fromJSON(paste(readLines(json_file), collapse=""))
+1513791551308:json_data <- fromJSON(paste(readLines(json_file)))
+1513867401940:heart_file <- "/home/ubuntu/heart-rate.json"
+1513867401941:step_file <- "home/ubuntu/step-count.json"
+1513867401944:heart_url <- "https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"
+1513867401945:step_url <- "https://www.dropbox.com/s/kpmkqyx85dugfho/step-count.json?dl=0"
+1513867401948:library(mongolite)
+1513867401949:library(jsonlite)
+1513867401950:library(curl)
+1513867401969:heart <- stream_in(curl("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"))
+1513867412620:heart_file <- "/home/ubuntu/heart-rate.json"
+1513867412621:step_file <- "home/ubuntu/step-count.json"
+1513867412623:heart_url <- "https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"
+1513867412625:step_url <- "https://www.dropbox.com/s/kpmkqyx85dugfho/step-count.json?dl=0"
+1513867412627:library(mongolite)
+1513867412630:library(jsonlite)
+1513867412631:library(curl)
+1513867412632:heart <- stream_in(curl("https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json"))
+1513867448687:heart <- stream_in(curl(heart_url))
+1513868053669:heart_data <- fromJSON(file= "/ubuntu/home/heart-rate.json" )
+1513868084264:heart_data <- fromJSON(file = heart_file)
+1513868093041:View(heart_data)
+1513868357542:heart_data <- mongo(collection = "heart-rate", db = "q3", url = "mongodb://localhost",
+1513868357543:verbose = TRUE)
+1513868361344:View(heart_data)
+1513868361468:View(heart_data)
+1513868531353:mydata <- heart_data$find()
+1513868531362:stopifnot(all.equal(mydata, heart-rate))
+1513868531364:con$drop()
+1513868548583:mydata <- heart_data$find()
+1513868548674:stopifnot(all.equal(mydata, heart_rate))
+1513868548676:con$drop()
+1513868566002:mydata <- heart_data$find()
+1513868566004:stopifnot(all.equal(mydata, heart_rate))
+1513868566006:mydata$drop()
+1513868686276:mydata <- heart_data$find()
+1513868908853:con <- mongo("mtcars", url = "mongodb://readwrite:test@ds043942.mongolab.com:43942/jeroen_test")
+1513868927352:testdata <- con$find()
+1513868988392:stopifnot(all.equal(testdata, mtcars))
+1513869045581:View(con)
+1513869045877:View(con)
+1513869052341:View(heart)
+1513869052643:View(heart)
+1513869056112:View(heart_data)
+1513869056456:View(heart_data)
+1513869058973:View(heart)
+1513869059158:View(heart)
+1513869075900:con <- mongo("mtcars", url = "mongodb://readwrite:test@ds043942.mongolab.com:43942/jeroen_test")
+1513869100945:mydata <- con$find()
+1513869101121:stopifnot(all.equal(mydata, mtcars))
+1513869101123:con$drop()
+1513869416106:heart_data <- mongo(collection = "heart-rate", db = "q3", url = "mongodb://localhost",
+1513869416107:verbose = TRUE)
+1513869419679:View(heart_data)
+1513869420017:View(heart_data)
+1513870298636:data1 <- fromJSON("https://api.github.com/users/hadley/orgs")
+1513871002236:mydata <- heart_data$find('{"user_id":1690}')
+1513871058750:View(con)
+1513875986307:con <- mongo("mtcars", url = "mongodb://readwrite:test@ds043942.mongolab.com:43942/jeroen_test")
+1513875987511:if(con$count() > 0) con$drop()
+1513875987689:con$insert(mtcars)
+1513875987900:stopifnot(con$count() == nrow(mtcars))
+1513876253124:View(con)
+1513876469420:mydata <- con$find()
+1513876469778:stopifnot(all.equal(mydata, mtcars))
+1513876469780:con$drop()
+1513876861042:heart_data <- mongo(collection = "heart-rate", db = "q3", url = "mongodb://localhost",
+1513876861045:verbose = TRUE)
+1513876861047:if(heart_data$count() > 0) heart_data$drop()
+1513876861054:heart_data$insert(heart-rate)
+1513876867681:View(con)
+1513876867878:View(con)
+1513876891549:View(heart_data)
+1513876891732:View(heart_data)
+1513876924141:mtcars
+1513931552480:library(rjson)
+1513931567108:Lines <- readLines("heart-rate.json")
+1513931607752:Lines <- readLines(heart_file)
+1513931630046:Lines <- readLines("/home/ubuntu/heart-rate.json")
+1513931659885:heart_data <- as.data.frame(t(sapply(Lines, fromJSON)))
+1513935087152:install.packages("rmongodb")
+1513935135365:mongo <- mongo.create(host="localhost")
+1513935157103:library("rmongodb")
+1513935166642:mongo <- mongo.create(host="localhost")
+1513935171591:# [1] TRUE
+1513935171592:## get the list of the databases
+1513935171594:mongo.get.databases(mongo)
+1513935184627:# list of databases (with mydatabase)
+1513935184628:## get the list of the collections of mydatabase
+1513935184630:mongo.get.collections(mongo, db = "q3")
+1513935403614:?rmongodb
+1513935616832:# list of databases (with mydatabase)
+1513935616834:## get the list of the collections of mydatabase
+1513935616835:mongo.get.database.collections(mongo, 'q3')
+1513935645900:# list of databases (with mydatabase)
+1513935645901:## get the list of the collections of mydatabase
+1513935645903:mongo.get.database.collections(mongo, q3)
+1513935657563:# list of databases (with mydatabase)
+1513935657564:## get the list of the collections of mydatabase
+1513935657565:mongo.get.database.collections(mongo, "q3")
+1513935878006:# list of databases (with mydatabase)
+1513935878007:## get the list of the collections of mydatabase
+1513935878008:print(mongo.get.database.collections(mongo, "q3"))
+1513936036818:mongo.count(mongo, ns = DBNS)
+1513936040779:# list of all the collections of my database
+1513936040781:## Verify the size of mycollection
+1513936040782:DBNS = "heart-rate"
+1513936171604:mongo <- mongo.create(host="localhost")
+1513936176787:mongo.get.databases(mongo)
+1513936190522:print(mongo.get.database.collections(mongo, db = "q3"))
+1513936265987:mongo <- mongo.create(host="localhost", db="q3")
+1513936281935:mongo <- mongo.create(host="localhost")
+1513936291999:mongo.get.databases(mongo)
+1513936346440:library(mongolite)
+1513936358896:heart_data <- mongo(collection = "heart-rate", db = "q3", url = "mongodb://localhost",
+1513936358898:verbose = TRUE)
+1513936359214:heart_data <- mongo(collection = "heart-rate", db = "q3", url = "mongodb://localhost",
+1513936359215:verbose = TRUE)
+1513936465603:heart_data$count('{}')
+1513936517221:heart_data <- mongo(collection = "heart_rate", db = "q3", url = "mongodb://localhost",
+1513936517222:verbose = TRUE)
+1513936521599:heart_data$count('{}')
+1513936791929:alldata <- heart_data$find('{}')
+1513936836058:View(alldata)
+1513936836744:View(alldata)
+1513937491169:test <- heart_data$find(
+1513937491171:fields = '{"patient_business_id" : true, "step_count" : true}'
+1513937491172:)
+1513937508753:View(test)
+1513937508937:View(test)
+1513937570825:test <- heart_data$find(
+1513937570826:fields = '{"header$patient_business_id" : true, "body$heart_rate : true}'
+1513937570828:)
+1513938959308:test <- heart_data$find(
+1513938959309:fields = '{"header=" : true}'
+1513938959310:)
+1513938986716:test <- heart_data$find(
+1513938986718:fields = '{"user_id=" : true}'
+1513938986719:)
+1513939062601:alldata$header$id
+1513939332924:user_heart <- alldata$header$user_id
+1513939336122:heart <- alldata$heart_rate$value
+1513939364324:heart <- alldata$body$heart_rate$value
+1513939559838:step_data <- mongo(collection = "step_count", db = "q3", url = "mongodb://localhost",
+1513939559839:verbose = TRUE)
+1513939629281:alldata_step <- step_data$find('{}')
+1513939846018:user_step <- alldata_step$header$user_id
+1513939846019:step <- alldata_step$body$step_count
+1513939993840:heart_table = cbind(user_heart, heart)
+1513939999210:View(heart_table)
+1513940281608:user_heart <- alldata$header$external_id
+1513940291801:user_step <- alldata_step$header$external_id
+1513940319625:user_heart <- alldata$header$acquisition_provenance$external_id
+1513940336359:user_step <- alldata_step$header$acquisition_provenance$external_id
+1513940410104:heart_table = cbind(user_heart, heart)
+1513940415823:View(heart_table)
+1513940416011:View(heart_table)
+1513940958122:step_table = cbine(user_step, step)
+1513940958124:merge(heart_table, step_table, by.x = user_heart, by.y = user_step)
+1513940969592:step_table = cbind(user_step, step)
+1513940969593:merge(heart_table, step_table, by.x = user_heart, by.y = user_step)
+1513941055755:result <- merge(heart_table, step_table, by.x = "user_heart", by.y = "user_step")
+1513941061942:View(result)
+1513941062059:View(result)
+1513941113260:plot(result$heart, result$step)
+1513946281444:#Aggrerate user IDs, find mean heart rate for each user
+1513946281445:heart_table <- data.table(heart_table)
+1513946285354:library(data.table)
+1513946310078:install.packages("data.table")
+1513946352567:library(data.table)
+1513946360794:#Aggrerate user IDs, find mean heart rate for each user
+1513946360795:heart_table <- data.table(heart_table)
+1513946441052:heart_table_aggregate <- as.data.frame(heart_table[, mean(heart, na.rm = TRUE),by = user_heart])
+1513946535351:step_table <- data.table(step_table)
+1513946535353:setkey(step_table, user_step)
+1513946535355:step_table_aggregate <- as.data.frame(heart_table[, mean(step, na.rm = TRUE),by = user_step])
+1513946552451:step_table <- data.table(step_table)
+1513946552454:setkey(step_table, user_step)
+1513946552455:step_table_aggregate <- as.data.frame(step_table[, mean(step, na.rm = TRUE),by = user_step])
+1513946561303:View(step_table)
+1513946561488:View(step_table)
+1513946802293:heart_data <- mongo(collection = "heart_rate", db = "q3", url = "mongodb://localhost",
+1513946802295:verbose = TRUE)
+1513946802317:step_data <- mongo(collection = "step_count", db = "q3", url = "mongodb://localhost",
+1513946802318:verbose = TRUE)
+1513946802322:#Query user ID, heart rate and step count
+1513946802323:alldata <- heart_data$find('{}')
+1513946805713:user_heart <- alldata$header$patient_business_id
+1513946805715:heart <- alldata$body$heart_rate$value
+1513946805717:alldata_step <- step_data$find('{}')
+1513946806470:user_step <- alldata_step$header$patient_business_id
+1513946806472:step <- alldata_step$body$step_count
+1513946806474:#Convert to tables
+1513946806476:heart_table = cbind(user_heart, heart)
+1513946806492:step_table = cbind(user_step, step)
+1513946806499:#Aggrerate user IDs, find mean heart rate for each user
+1513946806500:heart_table <- data.table(heart_table)
+1513946806504:setkey(heart_table, user_heart)
+1513946806506:heart_table_aggregate <- as.data.frame(heart_table[, mean(heart, na.rm = TRUE),by = user_heart])
+1513946806510:step_table <- data.table(step_table)
+1513946806512:setkey(step_table, user_step)
+1513946806514:step_table_aggregate <- as.data.frame(step_table[, mean(step, na.rm = TRUE),by = user_step])
+1513946900762:View(step_table)
+1513947001200:View(heart_table)
+1513947001350:View(heart_table)
+1513947105581:View(heart_table_aggregate)
+1513947105704:View(heart_table_aggregate)
+1513947857307:install.packages("dplyr")
+1513948506990:library(dplyr)
+1513948612781:DPM_heart <- group_by(heart_table, user_heart)
+1513948692415:delay2 <- summarize(DPM_heart, count = n(), heart_count = mean(heart, na.rm = T))
+1513948722710:View(delay2)
+1513948722848:View(delay2)
+1513948842600:#Convert to tables
+1513948842601:heart_table = cbind(user_heart, as.numeric(heart))
+1513948854417:step_table = cbind(user_step, as.numeric(step))
+1513948911906:heart <- alldata$body$heart_rate$value
+1513948931130:#Convert to tables
+1513948931131:heart_table = cbind(user_heart, heart)
+1513948938855:View(heart_table)
+1513949059485:View(step_table)
+1513949059636:View(step_table)
+1513949078268:step <- as.numeric(step)
+1513949099145:step_table = cbind(user_step, step)
+1513949108675:#Aggrerate user IDs, find mean heart rate for each user
+1513949108676:heart_table <- data.table(heart_table)
+1513949114738:View(heart_table)
+1513949114883:View(heart_table)
+1513949123262:setkey(heart_table, user_heart)
+1513949127011:heart_table_aggregate <- as.data.frame(heart_table[, mean(heart, na.rm = TRUE),by = user_heart])
+1513949196219:View(step_table_aggregate)
+1513949196540:View(step_table_aggregate)
+1513949210173:View(delay2)
+1513949210247:View(delay2)
+1513950057631:DPM_heart <- group_by(heart_table, user_heart)
+1513950063388:delay2 <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513950080823:#Convert to tables
+1513950080825:heart_table = cbind(user_heart, heart)
+1513950084054:DPM_heart <- group_by(heart_table, user_heart)
+1513950205196:heart_table
+1513950256443:#Convert to tables
+1513950256445:heart_table = cbind(user_heart, as.numeric(heart))
+1513950264039:heart_table
+1513950279828:tbl_df(heart_table)
+1513950314813:heart <- as.numeric(heart)
+1513950347196:#Convert to tables
+1513950347197:heart_table = cbind(user_heart, as.integer(heart))
+1513950353260:tbl_df(heart_table)
+1513950395492:heart_table$heart <- as.numeric(heart_table$heart)
+1513950426369:heart_table$heart <- as.numeric(heart)
+1513950571474:typeof(heart)
+1513950910992:library(mongolite)
+1513950910994:library(curl)
+1513950910995:library(data.table)
+1513950911060:library(dplyr)
+1513950919859:#Connect to local mongoDB database
+1513950919861:heart_data <- mongo(collection = "heart_rate", db = "q3", url = "mongodb://localhost",
+1513950919862:verbose = TRUE)
+1513950919873:step_data <- mongo(collection = "step_count", db = "q3", url = "mongodb://localhost",
+1513950919875:verbose = TRUE)
+1513950932904:#Query user ID, heart rate and step count
+1513950932905:alldata <- heart_data$find('{}')
+1513950938434:user_heart <- alldata$header$patient_business_id
+1513950938435:heart <- alldata$body$heart_rate$value
+1513950938437:heart <- as.numeric(heart)
+1513950938439:alldata_step <- step_data$find('{}')
+1513950939359:user_step <- alldata_step$header$patient_business_id
+1513950939360:step <- alldata_step$body$step_count
+1513950939361:step <- as.numeric(step)
+1513951084616:heart_table$heart <- as.numeric(heart_table$heart)
+1513951091777:heart_table <- cbind(user_heart, heart)
+1513951091841:heart_table <- tbl_df(heart_table)
+1513951094997:heart_table$heart <- as.numeric(heart_table$heart)
+1513951143302:heart_table
+1513951246391:step_table <- cbind(user_step, step)
+1513951246408:step_table <- tbl_df(step_table)
+1513951246409:step_table$step <- as.numeric(step_table$step)
+1513951371712:date_heart <- alldata$header$reation_date_time
+1513951396606:date_heart <- alldata$header$creation_date_time
+1513951467292:step_date <- alldata_step$header$creation_date_time
+1513951594913:data_heart <- substring(date_heart,1,10)
+1513951611041:date_heart <- substring(date_heart,1,10)
+1513951714307:date_step <- alldata_step$header$creation_date_time
+1513951714309:date_step <- substring(date_step,1,10)
+1513951752579:heart_table <- cbind(user_heart, date_heart, heart)
+1513951752644:heart_table <- tbl_df(heart_table)
+1513951752646:heart_table$heart <- as.numeric(heart_table$heart)
+1513951752654:step_table <- cbind(user_step, date_step, step)
+1513951752671:step_table <- tbl_df(step_table)
+1513951752673:step_table$step <- as.numeric(step_table$step)
+1513951826161:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952001921:View(heart_table)
+1513952002060:View(heart_table)
+1513952091868:delay2 <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513952124021:View(delay2)
+1513952124233:View(delay2)
+1513952300472:DPM_step <- group_by(step_table, user_step, date_step)
+1513952300506:step_bysubj <- summarize(DPM_step, step_count = mean(step, na.rm = T))
+1513952306994:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952307002:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513952318130:View(step_bysubj)
+1513952318249:View(step_bysubj)
+1513952318260:View(step_bysubj)
+1513952393759:View(step_table)
+1513952393866:View(step_table)
+1513952393992:View(step_table)
+1513952476569:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+1513952479368:View(step_bysubj)
+1513952479503:View(step_bysubj)
+1513952646940:result <- merge(heart_table, step_table, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"))
+1513952761273:result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"))
+1513952779481:heart_data <- mongo(collection = "heart_rate", db = "q3", url = "mongodb://localhost",
+1513952779482:verbose = TRUE)
+1513952779493:step_data <- mongo(collection = "step_count", db = "q3", url = "mongodb://localhost",
+1513952779494:verbose = TRUE)
+1513952779605:#Query user ID, heart rate and step count
+1513952779606:alldata <- heart_data$find('{}')
+1513952785482:user_heart <- alldata$header$patient_business_id
+1513952785483:date_heart <- alldata$header$creation_date_time
+1513952785485:date_heart <- substring(date_heart,1,10)
+1513952785493:heart <- alldata$body$heart_rate$value
+1513952785496:alldata_step <- step_data$find('{}')
+1513952786559:user_step <- alldata_step$header$patient_business_id
+1513952786560:date_step <- alldata_step$header$creation_date_time
+1513952786561:date_step <- substring(date_step,1,10)
+1513952786564:step <- alldata_step$body$step_count
+1513952786567:#Convert to tables
+1513952786568:heart_table <- cbind(user_heart, date_heart, heart)
+1513952786585:heart_table <- tbl_df(heart_table)
+1513952786617:heart_table$heart <- as.numeric(heart_table$heart)
+1513952786620:step_table <- cbind(user_step, date_step, step)
+1513952786625:step_table <- tbl_df(step_table)
+1513952786626:step_table$step <- as.numeric(step_table$step)
+1513952786630:#Aggrerate user IDs, find mean heart rate for each user
+1513952786631:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952786632:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513952786634:DPM_step <- group_by(step_table, user_step, date_step)
+1513952786635:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+1513952793976:library(mongolite)
+1513952793977:library(curl)
+1513952793978:library(data.table)
+1513952794042:library(dplyr)
+1513952802626:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952802628:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513952802629:DPM_step <- group_by(step_table, user_step, date_step)
+1513952802631:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+1513952818645:library(dplyr)
+1513952823400:#Aggrerate user IDs, find mean heart rate for each user
+1513952823401:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952874022:View(step_table)
+1513952874238:View(step_table)
+1513952905745:step_table
+1513952915636:heart_table$heart <- as.numeric(heart_table$heart)
+1513952920417:heart_table <- tbl_df(heart_table)
+1513952926931:heart_table <- cbind(user_heart, date_heart, heart)
+1513952926949:heart_table <- tbl_df(heart_table)
+1513952926951:heart_table$heart <- as.numeric(heart_table$heart)
+1513952926960:step_table <- cbind(user_step, date_step, step)
+1513952926966:step_table <- tbl_df(step_table)
+1513952926967:step_table$step <- as.numeric(step_table$step)
+1513952937880:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513952937927:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513952937957:DPM_step <- group_by(step_table, user_step, date_step)
+1513952937993:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+1513952944232:result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"))
+1513952950364:View(result)
+1513952950498:View(result)
+1513953121497:result_group <- group_by(result, user_heart)
+1513953121501:q4_ans <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513953131208:View(q4_ans)
+1513953131342:View(q4_ans)
+1513953149499:result_group <- group_by(result, user_heart)
+1513953189075:q4_ans <- summarize(result_group, heart_count = mean(heart, na.rm = T), step_count = mean(step, na.rm = T))
+1513953192287:View(q4_ans)
+1513953219560:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = T), step_count = mean(step_count, na.rm = T))
+1513953222940:View(q4_ans)
+1513953223073:View(q4_ans)
+1513953572483:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513953572485:xlab="heart rate times/min", ylab="step count", pch=10, col = "aquamarine3")
+1513953572681:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513953572687:lines(lowess(result$step_count~result$heart_count), col="blue") # lowess line (x,y)
+1513953597316:View(step_bysubj)
+1513953626808:View(heart_bysubj)
+1513953627001:View(heart_bysubj)
+1513953864736:legend("topright", pch = c(3, 19, NA, 3, 19),
+1513953864738:col = c("red", "blue"),
+1513953864739:legend = c("linear regression", "lowess regression"))
+1513953875764:legend("topright",
+1513953875765:col = c("red", "blue"),
+1513953875767:legend = c("linear regression", "lowess regression"))
+1513953893177:legend("topright", pch = c(3, 19),
+1513953893178:col = c("red", "blue"),
+1513953893179:legend = c("linear regression", "lowess regression"))
+1513953937034:#Aggrerate user IDs and date, find mean daily heart rate and mean daily step count for each user
+1513953937035:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513953937042:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = F))
+1513953937047:DPM_step <- group_by(step_table, user_step, date_step)
+1513953937052:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = F))
+1513953937058:result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"))
+1513953937186:result_group <- group_by(result, user_heart)
+1513953937189:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = F), step_count = mean(step_count, na.rm = F))
+1513953937197:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513953937198:xlab="heart rate times/min", ylab="step count", pch=10, col = "aquamarine3")
+1513953937225:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513953937227:lines(lowess(result$step_count~result$heart_count), col="blue") # lowess line (x,y)
+1513953937229:legend("topright", pch = c(3, 19),
+1513953937230:col = c("red", "blue"),
+1513953937231:legend = c("linear regression", "lowess regression"))
+1513953944422:View(q4_ans)
+1513953944575:View(q4_ans)
+1513954097028:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513954097037:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = F))
+1513954097043:DPM_step <- group_by(step_table, user_step, date_step)
+1513954097048:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = F))
+1513954109684:View(step_bysubj)
+1513954109882:View(step_bysubj)
+1513954219928:View(result)
+1513954220112:View(result)
+1513954254363:DPM_heart <- group_by(heart_table, user_heart, date_heart)
+1513954254370:heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+1513954254377:DPM_step <- group_by(step_table, user_step, date_step)
+1513954254382:step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+1513954292489:View(step_bysubj)
+1513954292675:View(step_bysubj)
+1513954378832:result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), all.y = c("user_step", "date_step"))
+1513954388840:result <- merge(heart_bysubj, step_bysubj, all.x = c("user_heart", "date_heart"), all.y = c("user_step", "date_step"))
+1513954487301:result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"), all.x = T)
+1513954493906:View(result)
+1513954494078:View(result)
+1513954523106:result <- merge(step_bysubj, heart_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"), all.x = T)
+1513954540711:result <- merge(step_bysubj, heart_bysubj, by.y = c("user_heart", "date_heart"), by.x = c("user_step", "date_step"), all.x = T)
+1513954546581:View(result)
+1513954546707:View(result)
+1513954567739:result_group <- group_by(result, user_heart)
+1513954567758:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = F), step_count = mean(step_count, na.rm = F))
+1513954584946:result_group <- group_by(result, user_step)
+1513954584949:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = F), step_count = mean(step_count, na.rm = F))
+1513954587149:View(q4_ans)
+1513954587259:View(q4_ans)
+1513954598639:View(result)
+1513954598829:View(result)
+1513954632006:result_group <- group_by(result, user_step)
+1513954632009:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = T), step_count = mean(step_count, na.rm = T))
+1513954634144:View(q4_ans)
+1513954634297:View(q4_ans)
+1513954685226:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513954685227:xlab="heart rate times/min", ylab="step count", pch=10, col = "aquamarine3")
+1513954685232:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513954685235:lines(lowess(result$step_count~result$heart_count), col="blue") # lowess line (x,y)
+1513954685237:legend("topright", pch = c(3, 19),
+1513954685238:col = c("red", "blue"),
+1513954685239:legend = c("linear regression", "lowess regression"))
+1513954746662:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513954746664:xlab="heart rate times/min", ylab="step count", pch=10, col = "aquamarine3")
+1513954746668:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513954746671:lines(lowess(result$step_count~result$heart_count), col="blue") # lowess line (x,y)
+1513954746672:legend("topright", pch = c(3, 19),
+1513954746674:col = c("red", "blue"),
+1513954746675:legend = c("linear regression", "lowess regression"))
+1513954772899:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513954772900:xlab="heart rate times/min", ylab="step count", pch=10, col = "aquamarine3")
+1513954772918:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513954795612:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513954795614:xlab="heart rate times/min", ylab="step count", pch=5, col = "aquamarine3")
+1513954849645:plot(result$heart_count, result$step_count, main="Relationship between daily heart rate and step count",
+1513954849647:xlab="heart rate times/min", ylab="step count", pch=4, col = "aquamarine3")
+1513954849664:abline(lm(result$step_count~result$heart_count), col="red") # regression line (y~x)
+1513954915874:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513954915875:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3")
+1513954915894:abline(lm(result$heart_count~result$step_count), col="red") # regression line (y~x)
+1513954995785:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513954995786:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3", ylim = c[50, 90])
+1513955009065:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513955009066:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3", ylim = c(50, 90))
+1513955014857:abline(lm(result$heart_count~result$step_count), col="red") # regression line (y~x)
+1513955093563:save.image("~/Q3_workspace.RData")
+1513955383216:#Load workspace
+1513955383218:load("./Q3_workspace.Rdata")
+1513955488906:#Load workspace
+1513955488907:load("/home/rstudio/Q3_workspace.Rdata")
+1513955509630:load("/home/rstudio/Q3_workspace.RData")
+1513955567475:#Load workspace
+1513955567477:load("/home/rstudio/Q3_workspace.RData")
+1513955628667:View(heart_bysubj)
+1513955789142:result <- merge(step_bysubj, heart_bysubj, by.y = c("user_heart", "date_heart"), by.x = c("user_step", "date_step"), all.x = T)
+1513955792941:View(result)
+1513955798785:result_group <- group_by(result, user_step)
+1513955799465:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = T), step_count = mean(step_count, na.rm = T))
+1513955807435:library(dplyr)
+1513955810978:q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = T), step_count = mean(step_count, na.rm = T))
+1513955815842:View(q4_ans)
+1513955882326:View(q4_ans)
+1513955885546:View(q4_ans)
+1513955974031:#Plot and perform linear regression
+1513955974032:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513955974034:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3", ylim = c(50, 90))
+1513955981816:#Plot and perform linear regression
+1513955981818:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513955981820:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3", ylim = c(50, 90))
+1513955983873:abline(lm(result$heart_count~result$step_count), col="red") # regression line (y~x)
+1513955993104:#Plot and perform linear regression
+1513955993105:plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count",
+1513955993106:ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3")
+1513955994153:abline(lm(result$heart_count~result$step_count), col="red") # regression line (y~x)
+1513956125715:View(step_bysubj)

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1513934781358.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5AFCCDF9",
+    "lastKnownWriteTime" : 1513955528,
+    "last_content_update" : 1513955528426,
+    "path" : "~/LearnMongo.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "0,17",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

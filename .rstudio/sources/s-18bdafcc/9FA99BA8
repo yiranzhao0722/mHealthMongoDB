@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1513869052620.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9FA99BA8",
+    "lastKnownWriteTime" : 3180141808686473728,
+    "last_content_update" : 1513869052620,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "360d5972332041b99746533be40b55ad",
+        "name" : "heart",
+        "title" : "heart"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

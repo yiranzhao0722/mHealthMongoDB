@@ -1,0 +1,73 @@
+##BST262 Assignment 2
+#@Author: Mengxi Yang
+#Dependencies: mongolite, curl, data.table, dplyr
+#Install by calling install.package(<Package name>) 
+#In memory of Kim Jonghyun
+
+#Library
+library(mongolite)
+library(curl)
+library(data.table)
+library(dplyr)
+
+#Load workspace 
+load("/home/rstudio/Q3_workspace.RData")
+
+#Fetch .json file
+heart_file <- "/home/ubuntu/heart-rate.json"
+step_file <- "home/ubuntu/step-count.json"
+
+heart_url <- "https://www.dropbox.com/s/3nobbupqws7llxu/heart-rate.json?dl=0"
+step_url <- "https://www.dropbox.com/s/kpmkqyx85dugfho/step-count.json?dl=0"
+
+heart_file <- stream_in(curl(heart_url))
+step_file <-  stream_in(curl(step_url))
+
+#Connect to local mongoDB database
+heart_data <- mongo(collection = "heart_rate", db = "q3", url = "mongodb://localhost",
+               verbose = TRUE)
+step_data <- mongo(collection = "step_count", db = "q3", url = "mongodb://localhost",
+                   verbose = TRUE)
+
+#Query user ID, heart rate and step count
+alldata <- heart_data$find('{}')
+user_heart <- alldata$header$patient_business_id
+date_heart <- alldata$header$creation_date_time
+date_heart <- substring(date_heart,1,10)
+heart <- alldata$body$heart_rate$value
+
+alldata_step <- step_data$find('{}')
+user_step <- alldata_step$header$patient_business_id
+date_step <- alldata_step$header$creation_date_time
+date_step <- substring(date_step,1,10)
+step <- alldata_step$body$step_count
+
+#Convert to tables
+heart_table <- cbind(user_heart, date_heart, heart)
+heart_table <- tbl_df(heart_table)
+heart_table$heart <- as.numeric(heart_table$heart)
+
+step_table <- cbind(user_step, date_step, step)
+step_table <- tbl_df(step_table)
+step_table$step <- as.numeric(step_table$step)
+
+result <- merge(heart_bysubj, step_bysubj, by.x = c("user_heart", "date_heart"), by.y = c("user_step", "date_step"))
+
+
+#Aggrerate user IDs and date, find mean daily heart rate and mean daily step count for each user 
+DPM_heart <- group_by(heart_table, user_heart, date_heart)
+heart_bysubj <- summarize(DPM_heart, heart_count = mean(heart, na.rm = T))
+DPM_step <- group_by(step_table, user_step, date_step)
+step_bysubj <- summarize(DPM_step, step_count = sum(step, na.rm = T))
+
+result <- merge(step_bysubj, heart_bysubj, by.y = c("user_heart", "date_heart"), by.x = c("user_step", "date_step"), all.x = T)
+
+result_group <- group_by(result, user_step)
+q4_ans <- summarize(result_group, heart_count = mean(heart_count, na.rm = T), step_count = mean(step_count, na.rm = T))
+
+#Plot and perform linear regression 
+plot(result$heart_count~result$step_count, main="Relationship between daily heart rate and step count", 
+     ylab="heart rate times/min", xlab="step count", pch=4, col = "aquamarine3", ylim = c(50, 90))
+abline(lm(result$heart_count~result$step_count), col="red") # regression line (y~x) 
+
+
